@@ -1,6 +1,6 @@
 # Certificate Verification System for IITM BSc Students Community
 
-## Contributors: [Rahman24](https://github.com/Rahman24) [Dote](https://github.com/validd22)
+## Contributors: [Rahman24](https://github.com/Rahman24) [Dote](https://github.com/valid22)
 
 ### This project uses HTML, Bootstrap, Flask and API calls
 
