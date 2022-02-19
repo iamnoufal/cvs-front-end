@@ -1,0 +1,56 @@
+/* define all fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&family=Roboto:wght@400;900&display=swap');
+
+@font-face {
+    font-family: 'MinionVariableConcept-Roman';
+    src: url('/assets/fonts/Minion\ Variable\ Concept.otf');
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('/assets/fonts/Helvetica.ttf');
+}
+
+@font-face {
+    font-family: "Veitnam";
+    src: url(/assets/fonts/BeVietnamPro-Regular.ttf);
+}
+
+@page {
+    size: A4; /* Change from the default size of A4 */
+    margin: 0mm; /* Set margin on each page */
+}
+  
+
+/* define page style*/
+
+body {
+    font-family: Veitnam;
+}
+
+.cert-modal {
+    margin: auto;
+    justify-content: center;
+    border: 2px solid #7c251d;
+    border-radius: 1vw;
+}
+
+.left-inner {
+    padding: 10rem 4rem;
+    display: flex;
+    align-items: center;
+    background-color: #7c251d;
+}
+
+.right-inner {
+    background-color: #fff;
+}
+
+.title {
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}

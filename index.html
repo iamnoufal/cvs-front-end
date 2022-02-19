@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="IITM-POD Certificate Verification Portal">
+    <meta name="keywords" content="IITM, IITM POD, POD, CVS, Certificate, Verification">
+    <meta name="author" content="Dote, Noufal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="CVS Portal" />
+    <meta property="og:image" content="https://verify.iitmbsc.org/assets/images/logo.png">
+    <title>Certificate Verification Portal - IITM B.Sc.</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="style/main.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf9Uw4eAAAAANq0h_FEmIV7ogYlvGn7WMJsGKsA"></script>
+    <script src="https://kit.fontawesome.com/df201d4da9.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="left">
+          <div class="left-inner">
+            <img src="assets/images/logo.png" alt="IITM BSc Students Logo">
+          </div>
+        </div>
+        <div class="right">
+          <div class="right-inner">
+            <div class="verify-form">
+              <h3 class="title">Verify your Certificate!</h3>
+              <form action="#">
+                <div class="p-1 m-2">
+                  <label for="cert-id" class="form-label">Certificate ID</label>
+                  <input 
+                    type="text" 
+                    maxlength="22" 
+                    class="form-control inp-block" 
+                    id="cert-id" 
+                    aria-describedby="cert-help" 
+                    placeholder="Enter Certificate ID" 
+                  />
+                  <div id="cert-help" class="form-text label">The Certificate ID can be found at the bottom of the certificate or from the URL from the QR code.</div>
+                </div>
+                <p class="btn-placeholder"><button onclick="verify_certificate()" class="btn btn-outline-dark inp-block" id="verify-btn"> <span style="padding-left: 10px;">Verify</span> <span style="visibility: hidden;" class="verify-spinner spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> </button></p>
+              </form>
+              <p class="text-center footer desk">Made with ❤️ by <a href="https://github.com/valid22" style="color: #d6a54e">Dote</a>, Saranda house and <a href="https://noufal.me/" style="color: #d6a54e">Noufal Rahman</a>, Kaziranga house</p>
+            </div>
+            <div class="verified-box row" style="display: none; opacity: 0;">
+              <svg class="checkmark col-md-4 col-6" style="margin: auto;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <circle class="circle" cx="16" cy="16" r="16" fill="#0c3"/>
+                <path class="check" d="M9 16l5 5 9-9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+              </svg>
+              <div class="col-md-8 col-sm-12 cert-data" style="display: none; opacity: 0;">
+                <h3 class="py-2"> Certificate Verified </h3>
+                <h4 class="py-1"><span class="badge bg-secondary" id="cert-id-txt">{{Certificate ID}}</span></h4>
+                <h3 class="py-2"> Certificate Issue <span class="badge bg-success" id="cert-issue-txt">99 Dec 1999</span> </h3>
+                <h3 class="py-2"> Certificate Expire <span class="badge bg-danger" id="cert-expire-txt">99 Dec 1999</span> </h3>
+                <p class="py-2"> <a href="#" id="cert-url" target="_blank" rel="noopener noreferrer">Click here <i class="fas fa-external-link-alt"></i></a> to view the certificate</p>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="footer mob">Made with ❤ by <a href="https://github.com/valid22">Dote</a>, Saranda house and <a href="https://noufal.me">Noufal_Rahman</a>, Kaziranga house</div>
+      </div>       
+    </main>
+    <div class="models">
+      <div class="modal fade" id="alert-modal" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header" style="background: #f8d7da; color: #842029; border-color: #f5c2c7;">
+              <h5 class="modal-title" id="error-title-txt">ERROR TITLE</h5>
+            </div>
+            <div class="modal-body">
+              <p id="error-body-txt">ERROR BODY</p>
+            </div>
+            <div class="modal-footer" style="border: none;">
+              <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>document.querySelector(".right").style.minHeight = document.querySelector(".right").offsetHeight+"px";</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <script src="js/verify.js"></script>
+  </body>
+</html>
